@@ -10,4 +10,6 @@ dotnet new blazorwasm -o JsInteropDemo
 <br/>
 
 wwwroot 내부에  ` js `  라는 폴더를 만듭니다. <br/>
-그 안에 새 js 파일을 만들고 파일이름을 `app.js`으로 지정해준비다.
+그 안에 새 js 파일을 만들고 파일이름을 `app.js`으로 지정해줍니다.
+<br/>
+
