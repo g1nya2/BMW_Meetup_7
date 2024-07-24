@@ -45,7 +45,7 @@ window.PopperWrapper = {
 ```
 JavaScript에서 Popper.js 라이브러리를 감싸는 단순한 래퍼(wrapper) 함수입니다.<br/>
 `PopperWrapper` 객체를 `window`에 추가하고 그 안에 `createPopper`라는 메서드를 추가합니다. 이 메서드는 `Popper.js`의 `createPopper` 함수를 호출하는 역할을 합니다.
-> 이 부분이 Popper.js 라이브러리를 래핑(wrapping)하는 단계입니다.
+
 <br/>
 
 js 래퍼 파일도 프로젝트에 추가하기 위해, wwwroot/index.html 파일을 수정합니다.
