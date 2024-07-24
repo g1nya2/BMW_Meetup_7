@@ -89,7 +89,7 @@ public class Popper
 }
 ```
 
-> Popper 클래스: Blazor와 Popper.js 간의 상호작용을 캡슐화하는 클래스.
+> Popper 클래스: Blazor와 Popper.js 간의 상호작용을 위한 Popper Wrapping 클래스.
 > 
 > 먼저 `jSRuntime`를 주입하고 클래스의 생성자를 만듭니다.
 > 
@@ -98,3 +98,43 @@ public class Popper
 >  * ElementReference는 Blazor에서 HTML 요소를 참조하는 방식입니다.
 > 
 > 그런 다음 InvokeVoidAsync 메서드를 사용하여 JavaScript 메서드를 호출합니다.
+
+<br/>
+
+이제 여기까지 래핑을 완료하였고, `Popper.cs`를 통해 Blazor에서 이 래퍼를 호출할 수 있게 해주었습니다.
+<br/>
+
+이제 `Program.cs` 파일에서 Popper 클래스를 종속성 주입 서비스로 등록합니다.
+```
+// Popper 서비스 등록
+builder.Services.AddTransient<Popper>();
+
+await builder.Build().RunAsync();
+```
+>builder.Services.AddTransient<Popper>();를 추가하여 Popper 클래스를 서비스로 등록합니다.
+> 이 코드로 Popper 클래스의 인스턴스가 DI(종속성 주입) 컨테이너에 등록되어 @inject Popper Popper 구문으로 Blazor 컴포넌트에서 주입할 수 있게 됩니다.
+<br/>
+
+이제 Blazor 컴포넌트에서 Wrapping한 popperjs를 사용해보겠습니다.
+```
+@inject Popper Popper
+
+<span id="reference" @ref="reference" style="background-color:blue;">Reference</span>
+<span id="popper" @ref="popper" style="background-color:red;">Popper</span>
+
+@code {
+    private ElementReference reference;
+    private ElementReference popper;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Popper.CreatePopperAsync(reference, popper, new { placement = "right-start" });
+        }
+    }
+}
+```
+이 부분은 Home.razor의 `@page` 지시문 밑 부분을 지우고 넣게 됩니다.
+
+Blazor 웹에 잘 적용되는 것을 볼 수 있습니다.
