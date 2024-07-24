@@ -137,4 +137,4 @@ await builder.Build().RunAsync();
 ```
 이 부분은 Home.razor의 `@page` 지시문 밑 부분을 지우고 넣게 됩니다.
 
-Blazor 웹에 잘 적용되는 것을 볼 수 있습니다.
+실행시켜보면 Blazor 웹에 잘 적용되는 것을 볼 수 있습니다.
