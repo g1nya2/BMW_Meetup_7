@@ -59,7 +59,7 @@ js 래퍼 파일을 로드합니다.<br/>
 
 Blazor에서 Popper를 사용하려면 Popper 클래스를 작성하여 JavaScript 래퍼와 상호작용할 수 있도록 합니다. Blazor 애플리케이션에서 JavaScript 상호 운용을 통해 Popper.js 라이브러리를 사용하는 방법을 보여줍니다.
 
-`Popper.cs`라는 파일을 `Data` 폴더에 생성하고 다음 내용을 추가합니다:
+`Popper.cs`라는 파일을 `Services` 폴더를 생성하고 파일을 그 안에 생성한 후 다음 내용을 추가합니다:
 
 ```
 using Microsoft.JSInterop;
