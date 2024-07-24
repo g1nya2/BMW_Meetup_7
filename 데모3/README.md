@@ -90,7 +90,11 @@ public class Popper
 ```
 
 > Popper 클래스: Blazor와 Popper.js 간의 상호작용을 캡슐화하는 클래스.
+> 
 > 먼저 `jSRuntime`를 주입하고 클래스의 생성자를 만듭니다.
+> 
 > 비동기 메서드는 CreatePopperAsync로 명명하며, 이 메서드는 두 개의 ElementReference를 인수로 받습니다.
->>  ElementReference는 Blazor에서 HTML 요소를 참조하는 방식입니다.
+> 
+>  * ElementReference는 Blazor에서 HTML 요소를 참조하는 방식입니다.
+> 
 > 그런 다음 InvokeVoidAsync 메서드를 사용하여 JavaScript 메서드를 호출합니다.
