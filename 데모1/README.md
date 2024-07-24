@@ -47,5 +47,6 @@ Home.razor에서 `@page`지시문 아래에 다음과 같이 IJSRuntime를 넣�
 IJSRuntime 인터페이스에는 두 가지 메서드가 있습니다.
 > 1. ` InvokeAsync<TValue>` : 값을 반환하는 JavaScript 함수를 호출하는 데 사용
 > 2. InvokeVoidAsync : 아무것도 반환하지 않는 함수, 즉 C#의 void 메서드에 사용
+> 
 > 두 메서드는 여러 인수를 공유하는데, 첫 번째 인수 identifier는 본질적으로 호출하려는 JS 함수의 이름입니다. 두 번째 인수는 함수에 매개변수를 제공하는 데 사용됩니다.
 
