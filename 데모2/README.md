@@ -146,4 +146,4 @@ jsFunctions.calculateSquareRoot = function () {
 <br/>
 이제 실행시키고 프롬프트에 숫자를 입력하면 제곱근이 나오는 것을 확인할 수 있습니다.
 
-JS에서 c#코드를 호출해보았습니다.
+ ##### JavaScript 에서 c#코드를 호출해보았습니다.
